@@ -28,22 +28,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLConnect {
-
     private final Activity main;
     private List<String> list;
     private String URL="http://192.168.0.101/" , GET_URL = "get_post.php" , SENT_URL = "sent_post.php";
 
     public MySQLConnect(){main=null;}
 
-
-
     public MySQLConnect(Activity mainA) {
         main = mainA;
         list = new ArrayList<String>();
     }
-
     public List<String> getData(){
-
         String url = URL + GET_URL;
 
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
@@ -59,7 +54,6 @@ public class MySQLConnect {
             }
         }
         );
-
         RequestQueue requestQueue = Volley.newRequestQueue(main.getApplicationContext());
         requestQueue.add(stringRequest);
 

@@ -11,7 +11,6 @@ import android.widget.ListView;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     private EditText txtName;
     private Button btnSave;
     private ListView dataView;
@@ -19,14 +18,12 @@ public class MainActivity extends AppCompatActivity {
     private List<String> items;
     private ArrayAdapter<String> adt;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
         update();
-
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,13 +34,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     public void update(){
         items = mySQLConnect.getData();
         adt = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,items);
         dataView.setAdapter(adt);
     }
-
     public void init(){
         txtName = (EditText)findViewById(R.id.txtName);
         btnSave = (Button)findViewById(R.id.btnSave);
